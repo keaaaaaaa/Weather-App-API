@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Atlas - Discover Global Weather</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="weather-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">🌍 Weather Khea</h1>
+            <p class="subtitle">Explore weather across the globe</p>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    class="city-input" 
+                    placeholder="Search for a city..."
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="search-btn">
+                    <span>Search</span>
+                </button>
+            </div>
+            <div id="suggestions" class="suggestions"></div>
+        </div>
+
+        <!-- Current Weather Section -->
+        <div class="current-weather-section">
+            <div id="currentWeather" class="current-weather hidden">
+                <div class="weather-main">
+                    <div class="location-info">
+                        <h2 id="cityName" class="city-name"></h2>
+                        <p id="date" class="date"></p>
+                    </div>
+                    <div class="weather-display">
+                        <div class="temp-section">
+                            <div id="weatherIcon" class="weather-icon"></div>
+                            <div class="temp-info">
+                                <span id="temperature" class="temperature"></span>
+                                <p id="weatherDesc" class="weather-desc"></p>
+                            </div>
+                        </div>
+                        <div class="weather-details">
+                            <div class="detail-card">
+                                <span class="detail-label">Humidity</span>
+                                <span id="humidity" class="detail-value"></span>
+                            </div>
+                            <div class="detail-card">
+                                <span class="detail-label">Feels Like</span>
+                                <span id="feelsLike" class="detail-value"></span>
+                            </div>
+                            <div class="detail-card">
+                                <span class="detail-label">Wind Speed</span>
+                                <span id="windSpeed" class="detail-value"></span>
+                            </div>
+                            <div class="detail-card">
+                                <span class="detail-label">Pressure</span>
+                                <span id="pressure" class="detail-value"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loadingSpinner" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Loading weather data...</p>
+            </div>
+
+            <div id="errorMessage" class="error-message hidden"></div>
+        </div>
+
+        <!-- 5-Day Forecast Section -->
+        <div class="forecast-section">
+            <h3 class="forecast-title">5-Day Forecast</h3>
+            <div id="forecastContainer" class="forecast-container"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Data provided by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
